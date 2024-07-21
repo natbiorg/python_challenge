@@ -26,18 +26,20 @@ with open(csvpath) as csvfile:
         prof_loss.append(row[1])
         prof_loss = list((map(int, prof_loss)))
         
-
 # Initialize variables for change calculation
 
 total_change = 0
 
 #use len to find number of months 
 total_months = len(dates)
-# print(total_num_months)
-previous_profit_loss = profit_loss[0]
+
+print(total_months)
+previous_profit_loss = prof_loss[0]
+
+
 
 # Calculate the changes in Profit/Losses
-for profit_loss in profit_loss[1:]:  # Start from the second month
+for profit_loss in prof_loss[1:]:  # Start from the second month
     change = profit_loss - previous_profit_loss
     total_change += change
     previous_profit_loss = profit_loss
