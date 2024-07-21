@@ -1,10 +1,11 @@
-#Module 3 
+#Module 3 PyBank
+## Disclaimer: I used Xpert Learning Assistant to write this code 
 import os
 import csv
 
 # create a path to CSV file
 # csvpath = os.path.join('Resources', 'budget_data.csv')
-# I kept getting errors using a relative path so I switched to using an abolute file path
+# I kept getting errors using a relative path so I switched to using an absolute file path
 csvpath = "C:\\Users\\nwf91\\OneDrive\\Desktop\\VandyDataCourse\\Modules\\python-challenge\\python_challenge\\PyBank\\Resources\\budget_data.csv"
 
 # List to store data 
@@ -65,3 +66,5 @@ with open(file_path, 'w') as file:
     Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})
     """
     )
+
+
