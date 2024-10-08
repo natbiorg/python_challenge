@@ -4,9 +4,7 @@ import os
 import csv
 
 # create a path to CSV file
-# csvpath = os.path.join('Resources', 'election_data.csv')
-# I kept getting errors using a relative path so I switched to using an absolute file path
-csvpath = "C:\\Users\\nwf91\\OneDrive\\Desktop\\VandyDataCourse\\Modules\\python-challenge\\python_challenge\\PyPoll\\Resources\\election_data.csv"
+csvpath = os.path.join('Resources', 'election_data.csv')
 
 # Read the CSV file and process the data
 with open(csvpath, 'r') as file:
@@ -49,7 +47,7 @@ election_results = {
 }
 
 # Print and export to text file 
-file_path = "C:\\Users\\nwf91\\OneDrive\\Desktop\\VandyDataCourse\\Modules\\python-challenge\\python_challenge\\PyBank\\PyPollresults.txt"
+file_path = "PyPollresults.txt"
 
 # Export election results to a text file
 with open(file_path, 'w') as file: 
