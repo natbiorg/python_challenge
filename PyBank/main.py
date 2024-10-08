@@ -6,7 +6,8 @@ import csv
 # create a path to CSV file
 # csvpath = os.path.join('Resources', 'budget_data.csv')
 # I kept getting errors using a relative path so I switched to using an absolute file path
-csvpath = "C:\\Users\\nwf91\\OneDrive\\Desktop\\VandyDataCourse\\Modules\\python-challenge\\python_challenge\\PyBank\\Resources\\budget_data.csv"
+csvpath = os.path.join('Resources', 'budget_data.csv')
+
 
 # List to store data 
 dates = []
@@ -30,10 +31,13 @@ with open(csvpath) as csvfile:
 # The total number of months included in the dataset
 total_months = len(dates)
 # print(round(total_months,2))
+print(f'Total Months: {total_months}')
+
 
 # The net total amount of "Profit/Losses" over the entire period
 total = sum(prof_loss)
 # print(round(total,2))
+print(f'Total Profit/Loss: {total}')
 
 # Average change 
 for i in range(1, len(prof_loss)):
@@ -42,6 +46,7 @@ for i in range(1, len(prof_loss)):
 
 average_change = sum(changes)/len(changes)
 # print(round(average_change, 2))
+print(f'Average Change: {average_change}')
 
 # Greatest Increase/Decrease in Profits 
 max_increase = max(changes)
@@ -49,10 +54,12 @@ max_increase_date = dates[changes.index(max_increase) + 1]  # Adding 1 to get th
 
 max_decrease = min(changes)
 max_decrease_date = dates[changes.index(max_decrease) + 1]  # Adding 1 to get the corresponding date
-# print(f'The greatest increase was {max_increase} on {max_increase_date}the greatest decrease was {max_decrease} on {max_decrease_date}')
+print(f'Greatest Increase: {max_increase}')
+print(f'Greatest Decrease: {max_decrease}')
+print(f'The greatest increase was {max_increase} on {max_increase_date}the greatest decrease was {max_decrease} on {max_decrease_date}')
 
 # Print and export to text file 
-file_path = "C:\\Users\\nwf91\\OneDrive\\Desktop\\VandyDataCourse\\Modules\\python-challenge\\python_challenge\\PyBank\\PyBankresults.txt"
+file_path = "PyBankresults.txt"
 
 with open(file_path, 'w') as file: 
     file.write(
